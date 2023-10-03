@@ -217,9 +217,11 @@ class Output {
 
         while(chRow < 11) {
             if(unevenCol = 1) {
+            let screen[scrAdd] = screen[scrAdd] & 255;
             let screen[scrAdd] = screen[scrAdd] + (bitMap[chRow] * 256);
             }
             else {
+                let screen[scrAdd] = 0;
                 let screen[scrAdd] = bitMap[chRow];
             }
             let chRow = chRow + 1;

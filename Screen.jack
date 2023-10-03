@@ -65,6 +65,7 @@ class Screen {
         let i = 0;
         while(i < 8192) {
             let screen[i] = 0;
+            let i = i + 1;
         }
         return;
     }
@@ -110,13 +111,13 @@ class Screen {
 
     function void drawVerticalLine(int x, int y1, int y2) {
         if(y1 < y2) {
-            while(y1 < y2) {
+            while(~(y1 > y2)) {
                 do Screen.drawPixel(x, y1);
                 let y1 = y1 + 1;
             }
         }
         else {
-            while(y2 < y1) {
+            while(~(y2 > y1)) {
                 do Screen.drawPixel(x, y2);
                 let y2 = y2 + 1;
             }
@@ -126,13 +127,13 @@ class Screen {
 
     function void drawHorizontalLine(int y, int x1, int x2) {
         if(x1 < x2) {
-            while(x1 < x2) {
+            while(~(x1 > x2)) {
                 do Screen.drawPixel(x1, y);
                 let x1 = x1 + 1;
             }
         }   
         else {
-            while(x2 < x1) {
+            while(~(x2 > x1)) {
                 do Screen.drawPixel(x2, y);
                 let x2 = x2 + 1;
             }
